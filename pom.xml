@@ -9,18 +9,6 @@
     <version>0.9.1</version>
     <name>chess-web</name>
 
-    <!--
-        Repository for project-local libraries
-        Currently chess-core isn't published in any Maven repo
-    -->
-    <repositories>
-        <repository>
-            <id>ProjectRepo</id>
-            <name>ProjectRepo</name>
-            <url>file://${project.basedir}/src/local-libs</url>
-        </repository>
-    </repositories>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -38,6 +26,8 @@
             <groupId>conductor</groupId>
             <artifactId>chess-core</artifactId>
             <version>0.9.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/chess-core-0.9.1.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -82,7 +72,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
+                <version>1.3.2</version>
                 <executions>
                     <execution>
                         <id>server</id>
@@ -93,6 +83,9 @@
                 </executions>
                 <configuration>
                     <mainClass>chess.web.Server</mainClass>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>lib/chess-core-0.9.1.jar</additionalClasspathElement>
+                    </additionalClasspathElements>
                 </configuration>
             </plugin>
         </plugins>
