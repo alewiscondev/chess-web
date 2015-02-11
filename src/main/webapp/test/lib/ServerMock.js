@@ -10,18 +10,6 @@ define([
 
     var mockServer;
 
-    // TODO: Grrrrr this isn't working...
-    var makeDoneFunction = function () {
-        var done = false;
-        // noinspection JSHint
-        waitsFor(function() {
-            return done;
-        });
-        return function() {
-            done = true;
-        };
-    };
-
     var allResponses = {
         "GET": {},
         "POST": {},
@@ -156,29 +144,25 @@ define([
         });
     }
 
-    function waitForSyncThen(model, callback) {
-        var done = makeDoneFunction();
+    function waitForSyncThen(model, done) {
         model.once('sync', function () {
-            if (callback) {
-                callback();
-            }
             done();
         });
     }
 
-    function fetchAndWait(model, callback) {
-        waitForSyncThen(model, callback);
+    function fetchAndWait(model, done) {
+        waitForSyncThen(model, done);
         model.fetch();
     }
 
-    function saveAndWait(model, callback) {
+    function saveAndWait(model, done) {
         // TODO: get this to work!!
-        //waitForSyncThen(model, callback);
+        waitForSyncThen(model, done);
         model.save();
     }
 
-    function deleteAndWait(model, callback) {
-        waitForSyncThen(model, callback);
+    function deleteAndWait(model, done) {
+        waitForSyncThen(model, done);
         model.destroy();
     }
 
