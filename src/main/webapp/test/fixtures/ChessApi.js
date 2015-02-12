@@ -23,7 +23,23 @@ define(function() {
                 "e7" : {"owner" : "Black", "type" : "p"},
                 "f7" : {"owner" : "Black", "type" : "p"},
                 "g7" : {"owner" : "Black", "type" : "p"},
-                "h7" : {"owner" : "Black", "type" : "p"}
+                "h7" : {"owner" : "Black", "type" : "p"},
+                "a1" : {"owner" : "White", "type" : "r"},
+                "b1" : {"owner" : "White", "type" : "n"},
+                "c1" : {"owner" : "White", "type" : "b"},
+                "d1" : {"owner" : "White", "type" : "q"},
+                "e1" : {"owner" : "White", "type" : "k"},
+                "f1" : {"owner" : "White", "type" : "b"},
+                "g1" : {"owner" : "White", "type" : "n"},
+                "h1" : {"owner" : "White", "type" : "r"},
+                "a2" : {"owner" : "White", "type" : "p"},
+                "b2" : {"owner" : "White", "type" : "p"},
+                "c2" : {"owner" : "White", "type" : "p"},
+                "d2" : {"owner" : "White", "type" : "p"},
+                "e2" : {"owner" : "White", "type" : "p"},
+                "f2" : {"owner" : "White", "type" : "p"},
+                "g2" : {"owner" : "White", "type" : "p"},
+                "h2" : {"owner" : "White", "type" : "p"}
             }
         },
 
@@ -32,6 +48,32 @@ define(function() {
             "inCheck" : true,
             "gameOver" : false,
             "positionToPieces" : {
+                "a8" : {"owner" : "White", "type" : "q"},
+                "h8" : {"owner" : "White", "type" : "k"},
+                "a1" : {"owner" : "Black", "type" : "k"}
+            }
+        },
+
+        boardInCheckmateState: {
+            "currentPlayer" : "White",
+            "inCheck" : true,
+            "gameOver" : true,
+            "positionToPieces" : {
+                "a8" : {"owner" : "Black", "type" : "q"},
+                "a2" : {"owner" : "Black", "type" : "q"},
+                "h8" : {"owner" : "Black", "type" : "k"},
+                "a1" : {"owner" : "White", "type" : "k"}
+            }
+        },
+
+        boardAfterMove: {
+            "currentPlayer" : "White",
+            "inCheck" : false,
+            "gameOver" : false,
+            "positionToPieces" : {
+                "a8" : {"owner" : "White", "type" : "q"},
+                "h8" : {"owner" : "White", "type" : "k"},
+                "b1" : {"owner" : "Black", "type" : "k"}
             }
         }
 

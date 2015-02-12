@@ -6,13 +6,29 @@ require.config({
         'underscore': 'lib/underscore',
         'backbone' : 'lib/backbone',
         'jquery': 'lib/jquery',
-        'handlebars': 'lib/handlebars'
-    }
+        'handlebars': 'lib/handlebars',
+        'marionette': 'lib/marionette',
+        'AppViewTemplate': 'templates/AppViewTemplate.hbs',
+        'text': 'lib/text',
+        'AppView': 'views/AppView'
+}
 });
 
-require(['views/AppView', 'jquery'], function(AppView, $) {
+require(['AppView', 'marionette', 'jquery'], function(AppView, marionette, $) {
     $(function() {
-        var App = new AppView();
+        var MyApp = new Backbone.Marionette.Application();
+
+        MyApp.addRegions({
+            mainRegion: '#foo'
+        });
+
+        MyApp.addInitializer(function(options){
+
+            var App = new AppView();
+            MyApp.mainRegion.show(App);
+        });
+
+        MyApp.start();
+
     });
 });
-

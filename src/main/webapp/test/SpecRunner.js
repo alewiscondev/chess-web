@@ -6,6 +6,10 @@ require.config({
         'backbone' : 'lib/backbone',
         'underscore': 'lib/underscore',
         'jquery': 'lib/jquery',
+        'marionette': 'lib/marionette',
+        'text': 'lib/text',
+        'AppViewTemplate': 'templates/AppViewTemplate.hbs',
+        'handlebars': 'lib/handlebars',
 
         'jasmine': 'test/lib/jasmine',
         'jasmine-html': 'test/lib/jasmine-html',
@@ -42,7 +46,9 @@ require.config({
 });
 
 var specs = [
-    'test/specs/ChessboardModelTests'
+    'test/specs/ChessboardModelTests',
+    'test/specs/MovesModelTests',
+    'test/specs/AppViewTests'
 ];
 
 require(['boot'], function () {

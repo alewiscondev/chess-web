@@ -156,7 +156,6 @@ define([
     }
 
     function saveAndWait(model, done) {
-        // TODO: get this to work!!
         waitForSyncThen(model, done);
         model.save();
     }

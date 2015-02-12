@@ -1,22 +1,18 @@
 define([
     'jquery',
-    'backbone'
-], function($, Backbone) {
+    'backbone',
+    'marionette',
+    'text!AppViewTemplate',
+    'handlebars'
+], function($, Backbone, Marionette, AppViewTemplate, Handlebars) {
 
 
-    var AppView = Backbone.View.extend({
+    var AppView = Backbone.Marionette.LayoutView.extend({
 
-        el: "#chess-web-app",
+        template: Handlebars.compile(AppViewTemplate),
 
-        initialize: function() {
-            console.log('initialize this view');
 
-        },
-
-        render: function() {
-            // TODO render the board
-        }
-
+       // initialize: function()  { debugger; }
     });
 
     return AppView;
