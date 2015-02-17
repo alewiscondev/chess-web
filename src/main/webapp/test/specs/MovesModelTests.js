@@ -1,18 +1,15 @@
 define([
-    '../../models/MoveModel',
     '../../collections/MovesCollection',
     'ServerMock',
 
     'test/fixtures/ChessMovesApi'
 ], function(
-    Move,
     Moves,
     serverMock,
 
     fixtures
 ) {
     describe("The Moves", function() {
-        var move;
         var moves;
 
         describe("on a new game board", function() {

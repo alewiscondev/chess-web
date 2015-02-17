@@ -8,27 +8,16 @@ require.config({
         'jquery': 'lib/jquery',
         'handlebars': 'lib/handlebars',
         'marionette': 'lib/marionette',
-        'AppViewTemplate': 'templates/AppViewTemplate.hbs',
         'text': 'lib/text',
-        'AppView': 'views/AppView'
+        'App': 'app'
 }
 });
 
-require(['AppView', 'marionette', 'jquery'], function(AppView, marionette, $) {
+require(['jquery', 'App'], function($, App) {
     $(function() {
-        var MyApp = new Backbone.Marionette.Application();
 
-        MyApp.addRegions({
-            mainRegion: '#foo'
-        });
-
-        MyApp.addInitializer(function(options){
-
-            var App = new AppView();
-            MyApp.mainRegion.show(App);
-        });
-
-        MyApp.start();
+        var app = new App();
+        app.start();
 
     });
 });

@@ -1,21 +1,21 @@
 define([
-    'models/ChessboardModel',
+    '../../models/GameStateModel',
     'ServerMock',
 
     'test/fixtures/ChessApi'
 ], function(
-    Chessboard,
+    GameState,
     serverMock,
 
     fixtures
     ) {
-    describe("The Chessboard", function() {
+    describe("The GameState", function() {
         var board;
 
         describe("when in the initial state", function() {
 
             beforeEach(function(done) {
-                board = new Chessboard();
+                board = new GameState();
 
                 serverMock.add({
                     method: "POST",
@@ -55,7 +55,7 @@ define([
         describe("when Black is in check", function() {
 
             beforeEach(function(done) {
-                board = new Chessboard();
+                board = new GameState();
 
                 serverMock.add({
                     method: "GET",
@@ -82,7 +82,7 @@ define([
         describe("when White is in checkmate", function() {
 
             beforeEach(function(done) {
-                board = new Chessboard();
+                board = new GameState();
 
                 serverMock.add({
                     method: "GET",
@@ -109,7 +109,7 @@ define([
         describe("after a move", function() {
 
             beforeEach(function(done) {
-                board = new Chessboard();
+                board = new GameState();
 
                 serverMock.add({
                     method: "GET",
