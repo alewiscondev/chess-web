@@ -11,10 +11,8 @@ define([
 
         childView: SquareView,
 
-        id: 'squares',
+        id: 'squares'
 
-        initialize: function() {
-        }
     });
 
     return BoardView;

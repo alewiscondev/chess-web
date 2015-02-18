@@ -9,7 +9,8 @@ define([
         defaults: {
             col: 'i',
             row: '9',
-            color: 3
+            color: 3,
+            piece: ''
         }
 
     });

@@ -1,3 +1,7 @@
 {{#if yaxis}} <div class="axis y">{{row}}</div> {{/if}}
 {{#if xaxis}} <div class="axis x">{{col}}</div> {{/if}}
-
+{{#if pieceAt}}
+    <div class=pieceAt>
+        <div class={{pieceAt}} draggable="true"></div>
+    </div>
+{{/if}}

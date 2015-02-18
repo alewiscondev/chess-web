@@ -34,3 +34,84 @@
     top: 5px;
     left: 5px;
 }
+
+.pieceAt {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 25%;
+    left: 25%;
+}
+
+.Blackp {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/black_pawn.png) no-repeat center;
+}
+.Blackr {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/black_rook.png) no-repeat center;
+}
+
+.Blackb {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/black_bishop.png) no-repeat center;
+}
+
+.Blackn {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/black_knight.png) no-repeat center;
+}
+
+.Blackk {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/black_king.png) no-repeat center;
+}
+
+.Blackq {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/black_queen.png) no-repeat center;
+}
+
+.Whitep {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/white_pawn.png) no-repeat center;
+}
+.Whiter {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/white_rook.png) no-repeat center;
+}
+
+.Whiteb {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/white_bishop.png) no-repeat center;
+}
+
+.Whiten {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/white_knight.png) no-repeat center;
+}
+
+.Whitek {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/white_king.png) no-repeat center;
+}
+
+.Whiteq {
+    height: 100%;
+    width: 100%;
+    background: url(piece_images/white_queen.png) no-repeat center;
+}
+
+
+

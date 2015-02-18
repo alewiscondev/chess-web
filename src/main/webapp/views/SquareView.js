@@ -32,6 +32,9 @@ define([
             if (this.model.get('col') === 'a') {
                 helpers.yaxis = true;
             }
+            if (this.model.get('piece')) {
+                helpers.pieceAt = this.model.get('piece')['owner'] + this.model.get('piece')['type'];
+            }
             return helpers;
         }
 

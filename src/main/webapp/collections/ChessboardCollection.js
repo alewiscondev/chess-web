@@ -28,12 +28,17 @@ define([
             createSquares: function(gameState) {
 
                 var square;
+                var colrow;
                 var color = true;
 
                 for (var i = 8; i >= 1; i--) {
                     color = !color;
                     for (var j = 1; j <= 8; j++) {
                         square = new Square({'col': String.fromCharCode(j + 96), row: i, color: color});
+                        colrow = String.fromCharCode(j + 96) + i;
+                        if (gameState.isPieceAt(colrow)) {
+                            square.set('piece', gameState.get('positionToPieces')[colrow]);
+                        }
                         this.push(square);
                         color = !color;
                     }

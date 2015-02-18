@@ -15,6 +15,13 @@ define([
 
         urlRoot: function () {
             return "/api/chess";
+        },
+
+        isPieceAt: function(colrow) {
+            if (this.get('positionToPieces')[colrow]) {
+                return true;
+            }
+            return false;
         }
 
     });
