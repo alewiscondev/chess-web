@@ -10,19 +10,18 @@ define([
         GameState,
         when
     ) {
-        var MovesCollection = Backbone.Collection.extend({
+        var ChessboardCollection = Backbone.Collection.extend({
 
             model: Square,
 
             initialize: function() {
-                //this.gameState = new GameState();
-                //this.gameState.fetch().then(this.createSquares());
                 var gameState = new GameState();
                 var self = this;
+
                 this.fetchGameState(gameState).then(function (gameState) {
+
                     self.createSquares(gameState);
                 });
-
             },
 
             createSquares: function(gameState) {
@@ -56,5 +55,5 @@ define([
 
         });
 
-        return MovesCollection;
+        return ChessboardCollection;
     });

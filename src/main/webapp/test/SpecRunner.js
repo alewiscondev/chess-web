@@ -8,7 +8,6 @@ require.config({
         'jquery': 'lib/jquery',
         'marionette': 'lib/marionette',
         'text': 'lib/text',
-        'AppViewTemplate': 'templates/AppViewTemplate.hbs',
         'handlebars': 'lib/handlebars',
 
         'jasmine': 'test/lib/jasmine',
@@ -20,6 +19,11 @@ require.config({
         'expect': 'test/lib/expect'
 
     },
+
+    packages: [
+        { name: 'when', location: 'lib/when', main: 'when'}
+    ],
+
     shim: {
         'jasmine': {
             exports: 'window.jasmineRequire'

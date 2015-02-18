@@ -7,6 +7,7 @@ define([
 ], function(
     Square,
     Chessboard,
+    serverMock,
 
     fixtures
 ) {
@@ -15,8 +16,21 @@ define([
 
 
         beforeEach(function() {
-            board = new Chessboard();
 
+            spyOn(Chessboard, 'fetchGameState').and.callFake(function() {
+                return {
+                    "currentPlayer" : "Black",
+                    "inCheck" : true,
+                    "gameOver" : false,
+                    "positionToPieces" : {
+                        "a8" : {"owner" : "White", "type" : "q"},
+                        "h8" : {"owner" : "White", "type" : "k"},
+                        "a1" : {"owner" : "Black", "type" : "k"}
+                    }
+                };
+            });
+
+            board = new Chessboard();
         });
 
         it("should be an object", function() {
