@@ -2,18 +2,22 @@ define([
     'backbone'
 ], function (
     Backbone
-    ) {
-    var ChessboardModel = Backbone.Model.extend({
 
-        urlRoot: function () {
-            return "api/chess";
+    ) {
+    var GameStateModel = Backbone.Model.extend({
+
+        defaults: {
+            currentPlayer: 'Red',
+            gameOver: 3,
+            inCheck: 3,
+            positionToPieces: []
         },
 
-        initialize: function() {
-            console.log('initialize this chessboard');
-
+        urlRoot: function () {
+            return "/api/chess";
         }
+
     });
 
-    return ChessboardModel;
+    return GameStateModel;
 })

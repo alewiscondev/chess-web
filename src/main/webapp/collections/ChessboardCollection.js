@@ -1,16 +1,32 @@
 define([
         'backbone',
-        'models/SquareModel'
+        'models/SquareModel',
+        'models/GameStateModel',
+        'when'
     ],
     function (
         Backbone,
-        Square
+        Square,
+        GameState,
+        when
     ) {
         var MovesCollection = Backbone.Collection.extend({
 
             model: Square,
 
             initialize: function() {
+                //this.gameState = new GameState();
+                //this.gameState.fetch().then(this.createSquares());
+                var gameState = new GameState();
+                var self = this;
+                this.fetchGameState(gameState).then(function (gameState) {
+                    self.createSquares(gameState);
+                });
+
+            },
+
+            createSquares: function(gameState) {
+
                 var square;
                 var color = true;
 
@@ -22,6 +38,15 @@ define([
                         color = !color;
                     }
                 }
+            },
+
+            fetchGameState: function(gameState) {
+                var d = when.defer();
+                gameState.fetch({success: function(gameState) {
+                    d.resolve(gameState);
+                }});
+
+                return d.promise;
             }
 
         });

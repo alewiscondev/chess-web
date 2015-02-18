@@ -5,8 +5,9 @@ define([
     'text!templates/AppViewTemplate.hbs',
     'handlebars',
     'views/BoardView',
-    'collections/ChessboardCollection'
-], function($, Backbone, Marionette, AppViewTemplate, Handlebars, BoardView, Chessboard) {
+    'collections/ChessboardCollection',
+    'views/ButtonsView'
+], function($, Backbone, Marionette, AppViewTemplate, Handlebars, BoardView, Chessboard, Buttons) {
 
 
     var AppView = Backbone.Marionette.LayoutView.extend({
@@ -16,13 +17,14 @@ define([
         id: 'app',
 
         regions: {
-            board: '#board'
+            board: '#board',
+            buttons: '#buttons'
             //gameStatus: '#gameStatus',
-            //newGame: '#newGame'
         },
 
         onBeforeShow: function() {
             this.getRegion('board').show(new BoardView({collection: new Chessboard()}));
+            this.getRegion('buttons').show(new Buttons());
         }
     });
 

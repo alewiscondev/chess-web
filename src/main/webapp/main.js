@@ -10,7 +10,11 @@ require.config({
         'marionette': 'lib/marionette',
         'text': 'lib/text',
         'App': 'app'
-}
+    },
+
+    packages: [
+        { name: 'when', location: 'lib/when', main: 'when'}
+    ]
 });
 
 require(['jquery', 'App'], function($, App) {
