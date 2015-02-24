@@ -51,9 +51,12 @@ require.config({
 
 var specs = [
     'test/specs/GameStateModelTests',
-    'test/specs/AppViewTests',
+    //'test/specs/AppViewTests',
     'test/specs/SquareModelTests',
+    'test/specs/MovesModelTests',
     'test/specs/GameBoardCollectionTests',
+    'test/specs/ButtonsViewTests',
+    'test/specs/SquareViewTests'
 
 ];
 

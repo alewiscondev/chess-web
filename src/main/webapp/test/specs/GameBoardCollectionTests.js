@@ -1,50 +1,50 @@
 define([
-    '../../models/SquareModel',
     '../../collections/GameBoardCollection',
+    '../../models/GameStateModel',
+    '../../models/MovesModel',
     'ServerMock',
 
+    'test/fixtures/ChessApi',
     'test/fixtures/ChessMovesApi'
+
 ], function(
-    Square,
-    Chessboard,
+    GameBoard,
+    GameState,
+    Moves,
     serverMock,
 
-    fixtures
+    stateFixtures,
+    movesFixtures
+
 ) {
-    describe("The Chessboard", function() {
-        var board;
+    describe("The GameBoard", function() {
+        var gameBoard;
+        var gameState;
+        var possibleMoves;
 
+        gameBoard = new GameBoard();
+        gameState = new GameState();
+        possibleMoves = new Moves();
 
-        beforeEach(function() {
-
-            spyOn(Chessboard, 'fetchGameState').and.callFake(function() {
-                return {
-                    "currentPlayer" : "Black",
-                    "inCheck" : true,
-                    "gameOver" : false,
-                    "positionToPieces" : {
-                        "a8" : {"owner" : "White", "type" : "q"},
-                        "h8" : {"owner" : "White", "type" : "k"},
-                        "a1" : {"owner" : "Black", "type" : "k"}
-                    }
-                };
-            });
-
-            board = new Chessboard();
+        serverMock.add({
+            method: "GET",
+            url: gameState.url(),
+            response: stateFixtures.initialBoardState
         });
+        serverMock.add({
+            method: "GET",
+            url: possibleMoves.url(),
+            response: movesFixtures.initialMoves
+        });
+
+        serverMock.fetchAndWait(gameState);
+        serverMock.fetchAndWait(possibleMoves);
+
 
         it("should be an object", function() {
-            expect(board).toBeDefined();
+            expect(1).toBe(2);
         });
 
-        it("should contain 64 squares", function(){
-            expect(board.length).toBe(64);
-        });
-
-        it("should have 32 light squares and 32 dark squares", function() {
-            expect(board.where({color: false}).length).toBe(32);
-            expect(board.where({color: true}).length).toBe(32);
-        });
 
     });
 

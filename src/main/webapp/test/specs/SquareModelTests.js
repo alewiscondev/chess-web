@@ -1,13 +1,9 @@
 define([
-    '../../models/SquareModel',
-    'ServerMock',
+    '../../models/SquareModel'
 
-    'test/fixtures/ChessMovesApi'
 ], function(
-    Square,
-    serverMock,
+    Square
 
-    fixtures
 ) {
     describe("The Square", function() {
         var square;
@@ -32,6 +28,21 @@ define([
 
         it("should have a color property", function(){
             expect(square.get('color')).toBeDefined();
+        });
+
+        it("should have a piece property", function(){
+            expect(square.get('piece')).toBeDefined();
+        });
+
+        it("should have a selected property that defaults to false", function(){
+            expect(square.get('selected')).toBeDefined();
+            expect(square.get('selected')).toBe(false);
+
+        });
+
+        it("should have a possibleToMove property that defaults to false", function(){
+            expect(square.get('possibleToMove')).toBeDefined();
+            expect(square.get('possibleToMove')).toBe(false);
         });
 
     });

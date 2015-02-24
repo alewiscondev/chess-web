@@ -1,11 +1,8 @@
 define([
-    'backbone',
-    '../collections/GameBoardCollection',
-    'when'
+    'backbone'
 ], function (
-    Backbone,
-    Squares,
-    when
+    Backbone
+
 
     ) {
     var GameStateModel = Backbone.Model.extend({
@@ -14,7 +11,7 @@ define([
             currentPlayer: '',
             gameOver: '',
             inCheck: '',
-            positionToPieces: [],
+            positionToPieces: []
         },
 
 

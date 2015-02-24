@@ -1,12 +1,11 @@
 define([
         'backbone',
-        'models/SquareModel',
-        'models/MovesModel'
+        'models/SquareModel'
     ],
     function (
         Backbone,
-        Square,
-        Moves
+        Square
+
 
     ) {
         var GameBoardCollection = Backbone.Collection.extend({

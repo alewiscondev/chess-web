@@ -7,9 +7,9 @@ define([
     var SquareModel = Backbone.Model.extend({
 
         defaults: {
-            col: 'i',
-            row: '9',
-            color: 3,
+            col: '',
+            row: '',
+            color: '',
             piece: '',
             selected: false,
             possibleToMove: false
