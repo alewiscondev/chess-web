@@ -48,6 +48,7 @@ define([
 
         _updateGameBoard: function () {
             this.gameBoard.setPiecesInitial(this.gameState, this.possibleMoves);
+
         },
 
         _updatePossibleMoves: function() {

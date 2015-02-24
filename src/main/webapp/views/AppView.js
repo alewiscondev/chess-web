@@ -6,8 +6,9 @@ define([
     'handlebars',
     'views/BoardView',
     '../collections/GameBoardCollection',
-    'views/ButtonsView'
-], function($, Backbone, Marionette, AppViewTemplate, Handlebars, BoardView, Chessboard, ButtonView) {
+    'views/ButtonsView',
+    'views/GameStatusView'
+], function($, Backbone, Marionette, AppViewTemplate, Handlebars, BoardView, Chessboard, ButtonView, GameStatusView) {
 
 
     var AppView = Backbone.Marionette.LayoutView.extend({
@@ -18,12 +19,14 @@ define([
 
         regions: {
             board: '#board',
-            buttons: '#buttons'
+            buttons: '#buttons',
+            gameStatus: '#gameStatus'
         },
 
         onBeforeShow: function() {
             this.getRegion('board').show(new BoardView({collection: this.options.gameBoard}));
             this.getRegion('buttons').show(new ButtonView({gameState: this.options.gameState}));
+            this.getRegion('gameStatus').show(new GameStatusView({gameState: this.options.gameState}));
         }
     });
 

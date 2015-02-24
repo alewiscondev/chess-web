@@ -21,7 +21,7 @@
     width: 672px;
     border: 2px solid black;
     overflow: hidden;
-    margin-left: auto;
+    margin-left: 60%;
     margin-right: auto;
 }
 
@@ -116,6 +116,23 @@
     height: 100%;
     width: 100%;
     background: url(piece_images/white_queen.png) no-repeat center;
+}
+
+#gameStatus {
+    float: right;
+    left: 15%;
+    bottom: 38%;
+    position: absolute;
+}
+
+#buttons {
+    position: absolute;
+    bottom: 30%;
+    left: 21.5%;
+}
+
+#app {
+    position: absolute;
 }
 
 
