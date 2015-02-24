@@ -12,11 +12,11 @@ define([
         template: Handlebars.compile(ButtonsViewTemplate),
 
         events: {
-            "click #newGame": "foo"
+            'click #newGame': 'newGame'
         },
 
-        foo: function() {
-            alert("HELLO WORLD")
+        newGame: function() {
+            this.options.gameState.save();
         }
 
     });

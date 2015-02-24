@@ -1,6 +1,6 @@
 define([
     '../../models/SquareModel',
-    '../../collections/ChessboardCollection',
+    '../../collections/GameBoardCollection',
     'ServerMock',
 
     'test/fixtures/ChessMovesApi'

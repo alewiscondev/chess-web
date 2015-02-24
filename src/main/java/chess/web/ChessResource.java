@@ -73,12 +73,12 @@ public class ChessResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON )
     @Consumes(MediaType.APPLICATION_JSON)
-    public GameStateBean postMove(@Context Request request, @Context Response response, MoveBean move) {
+    public MoveBean postMove(@Context Request request, @Context Response response, MoveBean move) {
         GameState currentState = getGameState(request);
 
         try {
             currentState.makeMove(move.toString());
-            return getGameStateBean(request, response);
+            return move;
         } catch (InvalidMoveException imex) {
             throw new BadRequestException(("Bad Move: " + imex.getMessage()));
         }

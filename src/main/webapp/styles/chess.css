@@ -12,6 +12,11 @@
     background-color: #89c32e;
 }
 
+.destination {
+    background-color: #c31319;
+    height: inherit;
+}
+
 #board {
     width: 672px;
     border: 2px solid black;

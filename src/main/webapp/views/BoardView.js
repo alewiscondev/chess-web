@@ -3,7 +3,8 @@ define([
     'backbone',
     'marionette',
     'handlebars',
-    'views/SquareView'
+    'views/SquareView',
+    'models/GameStateModel'
 ], function($, Backbone, Marionette, Handlebars, SquareView) {
 
 
@@ -12,6 +13,7 @@ define([
         childView: SquareView,
 
         id: 'squares'
+
 
     });
 

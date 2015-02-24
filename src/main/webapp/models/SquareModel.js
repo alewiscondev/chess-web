@@ -10,10 +10,12 @@ define([
             col: 'i',
             row: '9',
             color: 3,
-            piece: ''
+            piece: '',
+            selected: false,
+            possibleToMove: false
         }
 
     });
 
     return SquareModel;
-})
+});

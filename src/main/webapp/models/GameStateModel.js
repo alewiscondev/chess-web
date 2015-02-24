@@ -1,27 +1,26 @@
 define([
-    'backbone'
+    'backbone',
+    '../collections/GameBoardCollection',
+    'when'
 ], function (
-    Backbone
+    Backbone,
+    Squares,
+    when
 
     ) {
     var GameStateModel = Backbone.Model.extend({
 
         defaults: {
-            currentPlayer: 'Red',
-            gameOver: 3,
-            inCheck: 3,
-            positionToPieces: []
+            currentPlayer: '',
+            gameOver: '',
+            inCheck: '',
+            positionToPieces: [],
         },
+
+
 
         urlRoot: function () {
             return "/api/chess";
-        },
-
-        isPieceAt: function(colrow) {
-            if (this.get('positionToPieces')[colrow]) {
-                return true;
-            }
-            return false;
         }
 
     });
