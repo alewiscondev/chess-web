@@ -15,23 +15,7 @@ define([
             this.listenTo(this.model, 'change:selected', this.render);
         },
 
-        className: function () {
-            var classNames = 'square';
-
-            if(this.model.get('color')) {
-                classNames += ' colored';
-            }
-
-            if(this.model.get('possibleToMove')) {
-                classNames += ' destination'
-            }
-            return classNames;
-        },
-
-
-        id: function() {
-            return this.model.get('col') + this.model.get('row');
-        },
+        className: 'square',
 
         events: {
             'click': 'selectSquare'
@@ -49,14 +33,14 @@ define([
 
         templateHelpers: function() {
             var helpers = {};
-            if (this.model.get('row') === 1) {
-                helpers.xaxis = true;
-            }
-            if (this.model.get('col') === 'a') {
-                helpers.yaxis = true;
-            }
             if (this.model.get('piece')) {
-                helpers.pieceAt = this.model.get('piece')['owner'] + this.model.get('piece')['type'];
+                helpers.pieceAt = 'pieceAt ' + this.model.get('piece')['owner'] + this.model.get('piece')['type'];
+            }
+            if (this.model.get('color')) {
+                helpers.colored = 'colored';
+            }
+            if (this.model.get('possibleToMove')) {
+                helpers.destination = 'destination';
             }
             return helpers;
         }

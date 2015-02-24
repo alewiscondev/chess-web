@@ -1,8 +1,5 @@
-{{#if yaxis}} <div class="axis y">{{row}}</div> {{/if}}
-{{#if xaxis}} <div class="axis x">{{col}}</div> {{/if}}
-{{#if possibleToMove}} <div class = "destination"></div> {{/if}}
-{{#if pieceAt}}
-    <div class=pieceAt>
-        <div class={{pieceAt}} draggable="true"></div>
-    </div>
-{{/if}}
+<div class="{{colored}} {{destination}} ">
+    {{#if pieceAt}}
+        <div class="{{pieceAt}}"></div>
+    {{/if}}
+</div>

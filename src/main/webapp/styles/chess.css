@@ -7,9 +7,10 @@
     position: relative;
 }
 
-.square.colored {
-    border: 2px solid black;
+.colored {
     background-color: #89c32e;
+    width: inherit;
+    height: inherit;
 }
 
 .destination {
@@ -25,27 +26,25 @@
     margin-right: auto;
 }
 
-.axis {
-    color: black;
-}
+/*.axis {*/
+    /*color: black;*/
+/*}*/
 
-.axis.x {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-}
-.axis.y {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-}
+/*.axis.x {*/
+    /*position: absolute;*/
+    /*right: 5px;*/
+    /*bottom: 5px;*/
+/*}*/
+/*.axis.y {*/
+    /*position: absolute;*/
+    /*top: 5px;*/
+    /*left: 5px;*/
+/*}*/
 
 .pieceAt {
     position: absolute;
-    height: 40px;
-    width: 40px;
-    top: 25%;
-    left: 25%;
+    height: 48px;
+    width: 48px;
 }
 
 .Blackp {
