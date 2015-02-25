@@ -10,9 +10,7 @@ define([
     var SquareView = Backbone.Marionette.ItemView.extend({
 
         initialize: function() {
-            this.listenTo(this.model, 'change:piece', this.render);
-            this.listenTo(this.model, 'change:possibleToMove', this.render);
-            this.listenTo(this.model, 'change:selected', this.render);
+            this.listenTo(this.model, 'change:piece change:possibleToMove change:selected', this.render);
         },
 
         className: 'square',
