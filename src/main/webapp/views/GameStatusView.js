@@ -23,6 +23,7 @@ define([
         },
 
         check: function() {
+            this.checkString = '';
             if (this.gameState.get('gameOver')) {
                 var losingPlayer = this.gameState.get('currentPlayer');
                 var winningPlayer;
@@ -31,18 +32,30 @@ define([
                 } else {
                     winningPlayer = 'White';
                 }
-                alert(winningPlayer + ' wins!');
+                this.checkString = winningPlayer + ' wins!';
+                this.render();
                 return;
             }
             if (this.gameState.get('inCheck')) {
                 var playerInCheck = this.gameState.get('currentPlayer');
-                alert(playerInCheck + ' in check!');
+                this.checkString = playerInCheck + ' in check!';
+                this.render();
+                return;
 
             }
+            this.render();
+            return;
         },
 
         templateHelpers: function() {
             var helpers = {};
+
+            if (this.checkString) {
+                helpers.checkString = this.checkString;
+            } else {
+                helpers.checkString = '';
+            }
+
             if (this.currentPlayer === 'White') {
                 helpers.isWhite = true;
                 helpers.isBlack = false;
